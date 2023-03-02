@@ -20,12 +20,13 @@ for item in stock_id:
 stock_df_sort = stock_df.sort_values(
     by="涨跌幅", ascending=False, ignore_index=True)
 
-print("保存为csv"+'\n')
+print("保存为csv")
 stock_df.to_csv("stock.csv")
+print("存储完成!\n")
 
 print("涨幅最大的股票为：")
 print(stock_df_sort.loc[0, "股票代码"]+","+stock_df_sort.loc[0, "股票简称"])
-
+print("\n", end="")
 print("跌幅最大的股票为：")
 print(stock_df_sort.loc[len(stock_df.index)-1, "股票代码"] +
       ","+stock_df_sort.loc[len(stock_df.index)-1, "股票简称"])
